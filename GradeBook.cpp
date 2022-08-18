@@ -80,7 +80,7 @@ void GradeBook::setNumAlunos( int numAlunos )
 
     //O número de vagas é insuficiente para todos os alunos
     this->numAlunos =  MAXNUMALUNOSESCOLA - GradeBook::numAlunosEscola;
-    GradeBook::numAlunosEscola += MAXNUMALUNOSESCOLA; 
+    GradeBook::numAlunosEscola = MAXNUMALUNOSESCOLA; 
 
     /*
     if ( numAlunos > 0 )
