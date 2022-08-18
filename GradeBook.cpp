@@ -74,7 +74,8 @@ void GradeBook::setNumAlunos( int numAlunos )
     if ( ( numAlunos + GradeBook::numAlunosEscola ) <= MAXNUMALUNOSESCOLA )
     {
         this->numAlunos = numAlunos;
-        GradeBook::numAlunosEscola += this->numAlunos;            
+        GradeBook::numAlunosEscola += this->numAlunos;    
+        return;        
     }
 
     //O número de vagas é insuficiente para todos os alunos
