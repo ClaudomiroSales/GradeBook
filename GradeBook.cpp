@@ -63,6 +63,25 @@ GradeBook::GradeBook( const GradeBook& other )
 
 void GradeBook::setNumAlunos( int numAlunos )
 {    
+    //Valor inválido para numAlunos ou a escola já tem o número máximo de alumos
+    if ( numAlunos <= 0 || ( GradeBook::numAlunosEscola == MAXNUMALUNOSESCOLA ) )
+    {
+        numAlunos = 0;
+        return;
+    }
+
+    //Tem mais vagas que o número de alunos que estão sendo requisitados
+    if ( ( numAlunos + GradeBook::numAlunosEscola ) <= MAXNUMALUNOSESCOLA )
+    {
+        this->numAlunos = numAlunos;
+        GradeBook::numAlunosEscola += this->numAlunos;            
+    }
+
+    //O número de vagas é insuficiente para todos os alunos
+    this->numAlunos =  MAXNUMALUNOSESCOLA - GradeBook::numAlunosEscola;
+    GradeBook::numAlunosEscola += MAXNUMALUNOSESCOLA; 
+
+    /*
     if ( numAlunos > 0 )
         if ( ( numAlunos + GradeBook::numAlunosEscola ) <= MAXNUMALUNOSESCOLA )
         {
@@ -79,6 +98,8 @@ void GradeBook::setNumAlunos( int numAlunos )
               this->numAlunos = 0;
     else
         this->numAlunos = 0;    
+
+    */
 }
 
 string GradeBook::getCourseName( )
