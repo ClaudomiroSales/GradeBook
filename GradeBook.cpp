@@ -62,9 +62,7 @@ GradeBook::GradeBook( const GradeBook& other )
 
 
 void GradeBook::setNumAlunos( int numAlunos )
-{
-    cout << "Numero de alunos na escola " << GradeBook::numAlunosEscola << '\n';
-    cout << "Inscricao de novos alunos " << numAlunos << '\n';
+{    
     if ( numAlunos > 0 )
         if ( ( numAlunos + GradeBook::numAlunosEscola ) <= MAXNUMALUNOSESCOLA )
         {
@@ -80,10 +78,7 @@ void GradeBook::setNumAlunos( int numAlunos )
             else
               this->numAlunos = 0;
     else
-        this->numAlunos = 0;
-
-
-    cout << "Novos alunos que conseguiram a matricula " << this->numAlunos << "\n\n";
+        this->numAlunos = 0;    
 }
 
 string GradeBook::getCourseName( )

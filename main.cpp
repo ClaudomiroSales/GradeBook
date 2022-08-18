@@ -26,8 +26,8 @@ int main()
    //Variável pertence a classe
    cout << "\nTestando atributos statics.\n";
    cout << "Alunos que conseguiram vaga na escola " << gradebook3.getnumAlunosEscola( ) << '\n';
-   cout << "Numero de GradeBooks instanciados: " << gradebook3.getnumGradeBooks( ) << '\n';
-   cout << "Numero de GradeBooks instanciados: " << gradebook0.getnumGradeBooks( ) << '\n';
+   cout << "Numero de GradeBooks instanciados: "    << gradebook3.getnumGradeBooks( ) << '\n';
+   cout << "Numero de GradeBooks instanciados: "    << gradebook0.getnumGradeBooks( ) << '\n';
    
    return 0;
 }
