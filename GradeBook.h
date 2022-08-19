@@ -53,6 +53,9 @@ private:
     static const int NUMERODENOTAS = 4;
     static const string NOTAS[ NUMERODENOTAS ];
 
+    //Cada GradeBook tem o seu número fixo de alunos
+    static const int NUMALUNOS = 50;
+    string alunos[ NUMALUNOS ];
 
 };
 
