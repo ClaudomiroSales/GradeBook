@@ -23,8 +23,13 @@ public:
     void displayMessage( bool = true );
 
     int getNumAlunos( ) const { return numAlunos; }
-    inline int getnumGradeBooks( ) const { return numGradeBooks; }
-    inline int getnumAlunosEscola( ) const { return numAlunosEscola; }
+
+    //ERROR: métodos statis não podem ser const
+    //ERROR: static int getnumGradeBooks( ) const { return numGradeBooks; }
+    //Implementação no .h
+    static int getnumGradeBooks( )  { return numGradeBooks; }
+    //Implementação no .cpp
+    static int getNumAlunosEscola( );// { return numAlunosEscola; }
 
 private:
 
