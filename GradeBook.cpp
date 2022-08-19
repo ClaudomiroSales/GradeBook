@@ -7,7 +7,7 @@ using std::cout;
 int GradeBook::numGradeBooks = 0;
 int GradeBook::numAlunosEscola = 0;
 const int GradeBook::MAXNUMALUNOSESCOLA = 20;
-
+const string GradeBook::NOTAS[ NUMERODENOTAS ] = {"E","B","R","I"};
 
 int GradeBook::getNumAlunosEscola( )
 { 
@@ -19,6 +19,7 @@ GradeBook::GradeBook( )
 :courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 ), check( false )
 {  
       numGradeBooks++;  
+
 }
 
 GradeBook::GradeBook( string name, int numAlunos )
@@ -142,4 +143,11 @@ void GradeBook::displayMessage( bool check )
         cout << " A Turma tem " << numAlunos << " aluno.\n";  
     }
 
+}
+
+void GradeBook::printGrades( )
+{
+    for( int i = 0; i < NUMERODENOTAS; i++ )
+        cout << NOTAS[ i ] << ' ' << '(' <<&NOTAS[ i ] << ')' << '\n';
+    
 }

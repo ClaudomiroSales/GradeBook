@@ -31,6 +31,8 @@ public:
     //Implementação no .cpp
     static int getNumAlunosEscola( );// { return numAlunosEscola; }
 
+    static void printGrades( );
+
 private:
 
     string courseName;
@@ -45,7 +47,12 @@ private:
 
     //Pode inicializar aqui ou no cpp
     //const static int MAXNUMALUNOSESCOLA = 100;
-    const static int MAXNUMALUNOSESCOLA;
+    static const int MAXNUMALUNOSESCOLA;
+
+    //Número de notas E, B, R e I
+    static const int NUMERODENOTAS = 4;
+    static const string NOTAS[ NUMERODENOTAS ];
+
 
 };
 
