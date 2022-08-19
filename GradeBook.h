@@ -59,9 +59,6 @@ private:
     //Cada GradeBook tem o seu número fixo de alunos
     static const int NUMALUNOSPORTURMA = 50;
     string alunos[ NUMALUNOSPORTURMA ];
-
-
-
 };
 
 #endif // GRADEBOOK_H
