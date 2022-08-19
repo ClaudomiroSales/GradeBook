@@ -5,7 +5,6 @@
 //This is where the execution of program begins
 int main()
 {
-
    GradeBook::printGrades( );
  
    //Apenas 4 turmas podem ser criadas
@@ -15,6 +14,7 @@ int main()
    GradeBook gradebook3( "Geography", 70 );
    GradeBook gradebook4( gradebook3 );   
    //Total de alunos na escolha 130. Por quê?
+
 
    gradebook3.displayMessage( );
    cout << "Numero de alunos na escolha: ";   
