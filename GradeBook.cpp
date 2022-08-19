@@ -9,6 +9,11 @@ int GradeBook::numAlunosEscola = 0;
 const int GradeBook::MAXNUMALUNOSESCOLA = 20;
 
 
+int GradeBook::getNumAlunosEscola( )
+{ 
+    return numAlunosEscola; 
+}
+
 
 GradeBook::GradeBook( )
 :courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 ), check( false )
