@@ -15,8 +15,6 @@ public:
     
     void setCourseName( string );
     
-    void setNumAlunos( int );
-
     string getCourseName( );
 
     void displayMessage( bool = true ) const;
@@ -32,6 +30,9 @@ public:
     static int getNumAlunosEscola( );// { return numAlunosEscola; }
 
     static void printGrades( );
+
+    //Para tipos não nativos usar o const _ &
+    void cadastrarAlunoGradeBook( const string & );
 
 private:
 
@@ -59,6 +60,9 @@ private:
     //Cada GradeBook tem o seu número fixo de alunos
     static const int NUMALUNOSPORTURMA = 50;
     string alunos[ NUMALUNOSPORTURMA ];
+
+    //Método privado
+    void setNumAlunos( int );
 };
 
 #endif // GRADEBOOK_H
