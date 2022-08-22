@@ -2,6 +2,7 @@
 
 #include <iostream>
 using std::cout;
+using std::endl;
 
 //Instanciação de variáveis statics
 int GradeBook::numGradeBooks = 0;
@@ -150,4 +151,10 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
 
     cout << "Nao possivel cadastrar novos alunos. Turma cheia.\n";
 
+}
+
+void GradeBook::printListaAlunos( ) const
+{
+    for( int i = 0; i < numAlunosCadastrados; i++ )
+        cout << alunos[i] << endl;
 }

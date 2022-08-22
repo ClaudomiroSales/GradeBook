@@ -34,6 +34,8 @@ public:
     //Para tipos não nativos usar o const _ &
     void cadastrarAlunoGradeBook( const string & );
 
+    void printListaAlunos( ) const;
+
 private:
 
     string courseName;
