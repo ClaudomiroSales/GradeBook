@@ -98,16 +98,17 @@ string GradeBook::getCourseName( )
 
 void GradeBook::displayMessage( bool check ) const
 {
-    if( check )
+    if( !check )
+        return;
+    if( courseName.size( ) > 0 )
     {
-        if( courseName.size( ) > 0 )
-            cout << "Welcome to the Grade Book for course " << courseName << '.';          
-        else
-            cout << "Welcome to the Grade Book. Curso sem nome.";
+        cout << "Welcome to the Grade Book for course " << courseName << '.'
+        << " A Turma tem " << numAlunos << " aluno.\n"; 
+        printListaAlunos( );
+        return;
+    }                 
 
-        cout << " A Turma tem " << numAlunos << " aluno.\n";  
-    }
-
+    cout << "Welcome to the Grade Book. Curso sem nome.";
 }
 
 void GradeBook::displayMessage( bool check )
@@ -115,16 +116,17 @@ void GradeBook::displayMessage( bool check )
     //Atribuição dentro da classe
     this->check = check;
 
-    if( this-check )
+    if( !this->check )
+        return;
+    if( courseName.size( ) > 0 )
     {
-        if( courseName.size( ) > 0 )
-            cout << "Welcome to the Grade Book for course " << courseName << '.';          
-        else
-            cout << "Welcome to the Grade Book. Curso sem nome.";
+        cout << "Welcome to the Grade Book for course " << courseName << '.'
+        << " A Turma tem " << numAlunos << " aluno:\n"; 
+        printListaAlunos( );
+        return;
+    }         
 
-        cout << " A Turma tem " << numAlunos << " aluno.\n";  
-    }
-
+    cout << "Welcome to the Grade Book. Curso sem nome.\n";    
 }
 
 void GradeBook::printGrades( )
