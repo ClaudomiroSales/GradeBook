@@ -19,13 +19,13 @@ int main()
    cout << "Imprimindo alunos fora:\n";
    for( int i = 0; i < NUMALUNOS; i++ )
         cout << alunos[i] << endl;
-
-   gradebook1.displayMessage( );
+   
    gradebook1.cadastrarAlunoGradeBook( alunos[ 0 ] );
    gradebook1.cadastrarAlunoGradeBook( alunos[ 1 ] );
    gradebook1.cadastrarAlunoGradeBook( alunos[ 2 ] );
    gradebook1.cadastrarAlunoGradeBook( alunos[ 3 ] );
    gradebook1.printListaAlunos( );
+   gradebook1.displayMessage( );
    
    return 0;
 }
