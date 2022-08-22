@@ -38,6 +38,7 @@ private:
 
     string courseName;
     int numAlunos;
+    int numAlunosCadastrados;
     const int MAXSIZENAME;
     bool check;
     static int numGradeBooks;
