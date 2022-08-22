@@ -15,8 +15,10 @@ int main()
    GradeBook gradebook4( gradebook3 );   
    //Total de alunos na escolha 130. Por quê?
 
-
+   gradebook1.displayMessage( );
+   GRADEBOOK2.displayMessage( );
    gradebook3.displayMessage( );
+   gradebook4.displayMessage( );
    cout << "Numero de alunos na escolha: ";   
    cout << GradeBook::getNumAlunosEscola( ) << '\n';
 
