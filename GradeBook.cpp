@@ -133,7 +133,11 @@ void GradeBook::printGrades( )
     
 }
 
-void GradeBook::cadastrarAlunoGradeBook( const string & )
+void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
 {
-
+    //O array alunos[] tem tamanho máximo de NUMALUNOSPORTURMA
+    //Mas só pode aceitar numAlunos, que foi configurado durante a inicialização 
+    //através do método setNumAlunos
+    //Necessário criar um atributo para controlar quanto alunos tem realmente na turma
+    //que deve ser menor que numAlunos
 }
