@@ -13,10 +13,19 @@ int main()
    const GradeBook GRADEBOOK2( "Physics", 20 );
    GradeBook gradebook3( "Geography", 70 );
    GradeBook gradebook4( gradebook3 );   
-   //Total de alunos na escolha 130. Por quê?
+   //Lista de alunos
+   const int NUMALUNOS = 4;
+   const string alunos[ NUMALUNOS ] = { "Catarina", "Sophia", "Noemi", "Goo"};
+   cout << "Imprimindo alunos fora:\n";
+   for( int i = 0; i < NUMALUNOS; i++ )
+        cout << alunos[i] << endl;
 
    gradebook1.displayMessage( );
-   
+   gradebook1.cadastrarAlunoGradeBook( alunos[ 0 ] );
+   gradebook1.cadastrarAlunoGradeBook( alunos[ 1 ] );
+   gradebook1.cadastrarAlunoGradeBook( alunos[ 2 ] );
+   gradebook1.cadastrarAlunoGradeBook( alunos[ 3 ] );
+   gradebook1.printListaAlunos( );
    
    return 0;
 }
