@@ -140,4 +140,14 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
     //através do método setNumAlunos
     //Necessário criar um atributo para controlar quanto alunos tem realmente na turma
     //que deve ser menor que numAlunos
+
+    if( numAlunosCadastrados < numAlunos ) 
+    {
+        alunos[ numAlunosCadastrados - 1 ] = novoAluno;
+        numAlunosCadastrados++;
+        return;
+    }
+
+    cout << "Nao possivel cadastrar novos alunos. Turma cheia.\n";
+
 }
