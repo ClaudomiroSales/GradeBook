@@ -9,16 +9,14 @@ int main()
    //Apenas 4 turmas podem ser criadas
    //GradeBook.cpp: const int GradeBook::NUMTURMAS = 4;
    GradeBook gradebook1( "Math", 3 );
-   const GradeBook GRADEBOOK2( "Physics", 20 );
-   GradeBook gradebook3( "Geography", 70 );
    GradeBook *gradebookPtr;
    //Ponteiro em C++
    //GradeBook *gradebookPtr;
    //Pode inicializar já com um endereço válido 
    //GradeBook *gradebookPtr = &gradebook1;
    //Ou inserir o endereço depois
-   gradebookPtr = &gradebook1;
-
+   cout << "Criando um objeto e colocando o endereco no ponteiro.\n";
+   gradebookPtr = new GradeBook( "Geografia", 3 );
 
    //Lista de alunos
    const int NUMALUNOS = 4;
@@ -27,17 +25,27 @@ int main()
    for( int i = 0; i < NUMALUNOS; i++ )
         cout << alunos[i] << endl;
    
-   //Cadastrando alunos para gradebook1
-   gradebook1.cadastrarAlunoGradeBook( alunos[ 0 ] );
-   gradebook1.cadastrarAlunoGradeBook( alunos[ 1 ] );
+   //Cadastrando alunos
+   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 0 ] );
+   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );
       //Cadastrando alunos em gradebook1 usando gradebookPtr
    gradebookPtr->cadastrarAlunoGradeBook( alunos[ 2 ] );
-   gradebook1.displayMessage( );
    cout << "Imprimindo lista de alunos de gradebook1 usando o ponteiro gradebookPtr.\n";
    gradebookPtr->displayMessage( );
    cout << "Endereco de gradebook1: " << gradebookPtr << endl;
-   gradebookPtr = &gradebook3;
-   cout << "Agora gradebookPtr aponta para gradebook3.\n";
-   cout << "Endereco de gradebook3: " << gradebookPtr << endl;
+
+   cout << "Deletando o objeto.\n";
+   delete gradebookPtr;
+   gradebookPtr = 0;
+   cout << "\n\n";
+
+   cout << "Criando outro objeto e colocando o endereco no ponteiro.\n";
+   gradebookPtr = new GradeBook( gradebook1 );
+
+   //Cadastrando dois alunos
+   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 0 ] );
+   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );
+   gradebookPtr->displayMessage( );
+   
    return 0;
 }
