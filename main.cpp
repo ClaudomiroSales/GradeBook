@@ -46,6 +46,12 @@ int main()
    gradebookPtr->cadastrarAlunoGradeBook( alunos[ 0 ] );
    gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );
    gradebookPtr->displayMessage( );
+
+   //SEMPRE desalocar a memória explicitamente
+   //Lembrem do homem-aranha
+   cout << "Deletando o objeto explicitamente.\n";
+   cout << "delete gradebookPtr;\n";
+   delete gradebookPtr;
    
    return 0;
 }
