@@ -66,6 +66,11 @@ private:
 
     //Método privado
     void setNumAlunos( int );
+
+    //Alocação dinâmica de memória
+    //Guarda o histórico da quantidade de alunos
+    //que fizeram a disciplina ao longo dos anos
+    int *histPtr;
 };
 
 #endif // GRADEBOOK_H

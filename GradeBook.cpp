@@ -18,14 +18,14 @@ int GradeBook::getNumAlunosEscola( )
 
 
 GradeBook::GradeBook( )
-:courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
+:histPtr(0), courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {  
       numGradeBooks++;  
 
 }
 
 GradeBook::GradeBook( string name, int numAlunos )
-:MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
+:histPtr(0), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
     setCourseName( name );
     setNumAlunos( numAlunos );
@@ -34,7 +34,7 @@ GradeBook::GradeBook( string name, int numAlunos )
 }
 
 GradeBook::GradeBook( int numAlunos )
-:courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
+:histPtr(0), courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
     setNumAlunos( numAlunos );
 
