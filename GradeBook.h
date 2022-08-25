@@ -36,6 +36,8 @@ public:
 
     void printListaAlunos( ) const;
 
+    void cadastrarRegInHist( int );
+
 private:
 
     string courseName;
@@ -71,6 +73,14 @@ private:
     //Guarda o histórico da quantidade de alunos
     //que fizeram a disciplina ao longo dos anos
     int *histPtr;
+
+    //Tamanho alocado para histPtr
+    int histSize;
+
+    //Quantidade de registros em histPtr
+    //Quantidades de alunos cadastrados ao longo do ano
+    int nextEntrieInHist;
+
 };
 
 #endif // GRADEBOOK_H

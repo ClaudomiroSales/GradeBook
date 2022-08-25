@@ -160,3 +160,8 @@ void GradeBook::printListaAlunos( ) const
     for( int i = 0; i < numAlunosCadastrados; i++ )
         cout << alunos[i] << endl;
 }
+
+ void GradeBook::cadastrarRegInHist( int newEntries )
+ {
+
+ }
