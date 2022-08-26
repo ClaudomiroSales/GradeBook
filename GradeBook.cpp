@@ -84,6 +84,7 @@ GradeBook::~GradeBook( )
 
 void GradeBook::setNumAlunos( int numAlunos )
 {    
+    GradeBook::numAlunosEscola -= this->numAlunos;
     //Valor inválido para numAlunos
     if ( numAlunos <= 0 )
     {
