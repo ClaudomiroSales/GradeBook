@@ -4,6 +4,8 @@
 using std::cout;
 using std::endl;
 
+#include <cmath>
+
 //Instanciação de variáveis statics
 int GradeBook::numGradeBooks = 0;
 int GradeBook::numAlunosEscola = 0;
@@ -181,4 +183,25 @@ void GradeBook::printListaAlunos( ) const
  {
     for( int i = 0; i < nextEntrieInHist; i++ )
         cout << histPtr[ i ] << endl;
+ }
+
+ void GradeBook::alocarHist( int numAlunos ) 
+ {
+    if ( nextEntrieInHist == histSize )
+        {
+            int *histTemp = new int[ histSize ];
+            for( int i = 0; i < nextEntrieInHist; i++ )
+                histTemp[ i ] = histPtr[ i ];
+
+            delete [] histPtr;
+            histSize =+ ceil( histSize * 0.5 );//Aumenta a memória em 50%
+            int *histPtr = new int[ histSize ];
+            for( int i = 0; i < nextEntrieInHist; i++ )
+                histPtr[ i ] = histTemp[ i ];
+            histPtr[ nextEntrieInHist++ ] = numAlunos;
+
+            delete [] histTemp;
+        }
+
+        printHist( );
  }

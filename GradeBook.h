@@ -77,6 +77,9 @@ private:
 
     void printHist( ) const;
 
+    //Método para aumentar a memória disponível em histPtr
+    void alocarHist( int );
+
 };
 
 #endif // GRADEBOOK_H
