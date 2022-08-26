@@ -82,6 +82,8 @@ private:
     //Quantidades de alunos cadastrados ao longo do ano
     int nextEntrieInHist;
 
+    void printHist( ) const;
+
 };
 
 #endif // GRADEBOOK_H
