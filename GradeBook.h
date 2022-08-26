@@ -51,14 +51,7 @@ private:
     //static int numGradeBooks = 0;
 
     static int numAlunosEscola;
-
-    //Pode inicializar aqui ou no cpp
-    //const static int MAXNUMALUNOSESCOLA = 100;
-    static const int MAXNUMALUNOSESCOLA;
-
-    //Número de turmas
-    static const int NUMTURMAS;
-
+    
     //Número de notas E, B, R e I
     static const int NUMERODENOTAS = 4;
     static const string NOTAS[ NUMERODENOTAS ];

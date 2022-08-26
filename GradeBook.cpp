@@ -7,8 +7,6 @@ using std::endl;
 //Instanciação de variáveis statics
 int GradeBook::numGradeBooks = 0;
 int GradeBook::numAlunosEscola = 0;
-const int GradeBook::NUMTURMAS = 4;
-const int GradeBook::MAXNUMALUNOSESCOLA = NUMTURMAS * NUMALUNOSPORTURMA;
 const string GradeBook::NOTAS[ NUMERODENOTAS ] = {"E","B","R","I"};
 
 int GradeBook::getNumAlunosEscola( )
