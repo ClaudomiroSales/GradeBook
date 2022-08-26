@@ -43,7 +43,6 @@ GradeBook::GradeBook( int numAlunos )
     histPtr = new int[ histSize ];
     nextEntrieInHist = 0;
     histPtr[ nextEntrieInHist++ ] = this->numAlunos;
-    cout << 
 
     numGradeBooks++;
 }
