@@ -179,3 +179,9 @@ void GradeBook::printListaAlunos( ) const
  {
     
  }
+
+ void GradeBook::printHist( ) const
+ {
+    for( int i = 0; i < nextEntrieInHist; i++ )
+        cout << histPtr[ i ] << endl;
+ }
