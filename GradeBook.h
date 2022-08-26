@@ -39,6 +39,8 @@ public:
 
     void cadastrarRegInHist( int );
 
+     void setNumAlunos( int );
+
 private:
 
     string courseName;
@@ -58,10 +60,7 @@ private:
 
     //Cada GradeBook tem o seu número fixo de alunos
     static const int NUMALUNOSPORTURMA = 50;
-    string alunos[ NUMALUNOSPORTURMA ];
-
-    //Método privado
-    void setNumAlunos( int );
+    string alunos[ NUMALUNOSPORTURMA ];   
 
     //Alocação dinâmica de memória
     //Guarda o histórico da quantidade de alunos
