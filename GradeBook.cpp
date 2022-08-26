@@ -30,7 +30,7 @@ GradeBook::GradeBook( string name, int numAlunos )
     setCourseName( name );
     setNumAlunos( numAlunos );
     histSize = 1;
-    histPtr = new int[ 1 ];
+    histPtr = new int[ histSize ];
     nextEntrieInHist = 0;
     histPtr[ nextEntrieInHist++ ] = this->numAlunos;
 
@@ -42,9 +42,10 @@ GradeBook::GradeBook( int numAlunos )
 {
     setNumAlunos( numAlunos );
     histSize = 1;
-    histPtr = new int[ 1 ];
+    histPtr = new int[ histSize ];
     nextEntrieInHist = 0;
     histPtr[ nextEntrieInHist++ ] = this->numAlunos;
+    cout << 
 
     numGradeBooks++;
 }
