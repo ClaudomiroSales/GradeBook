@@ -25,18 +25,26 @@ GradeBook::GradeBook( )
 }
 
 GradeBook::GradeBook( string name, int numAlunos )
-:histPtr(0), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
+:MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
     setCourseName( name );
     setNumAlunos( numAlunos );
+    histSize = 1;
+    histPtr = new int[ 1 ];
+    nextEntrieInHist = 0;
+    histPtr[ nextEntrieInHist++ ] = this->numAlunos;
 
     numGradeBooks++;
 }
 
 GradeBook::GradeBook( int numAlunos )
-:histPtr(0), courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
+:courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
     setNumAlunos( numAlunos );
+    histSize = 1;
+    histPtr = new int[ 1 ];
+    nextEntrieInHist = 0;
+    histPtr[ nextEntrieInHist++ ] = this->numAlunos;
 
     numGradeBooks++;
 }
@@ -48,6 +56,11 @@ GradeBook::GradeBook( const GradeBook& other )
     setNumAlunos( other.numAlunos );
 
     numGradeBooks++;
+}
+
+GradeBook::~GradeBook( )
+{
+    delete [] histPtr; 
 }
 
 /* GradeBook::GradeBook( const GradeBook& other )
@@ -163,5 +176,5 @@ void GradeBook::printListaAlunos( ) const
 
  void GradeBook::cadastrarRegInHist( int newEntries )
  {
-
+    
  }
