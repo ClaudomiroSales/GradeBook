@@ -12,6 +12,7 @@ public:
     GradeBook( string , int = 0 );
     GradeBook( int );
     GradeBook( const GradeBook & );
+    ~GradeBook( );
     
     void setCourseName( string );
     
