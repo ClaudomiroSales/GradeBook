@@ -10,14 +10,14 @@ int main()
    //GradeBook.cpp: const int GradeBook::NUMTURMAS = 4;
    GradeBook gradebook1( "Math", 3 );
    GradeBook *gradebookPtr;
-   //Ponteiro em C++
-   //GradeBook *gradebookPtr;
-   //Pode inicializar já com um endereço válido 
-   //GradeBook *gradebookPtr = &gradebook1;
-   //Ou inserir o endereço depois
+   int novosAlunos = 10;
+   
    cout << "Criando um objeto e colocando o endereco no ponteiro.\n";
    gradebookPtr = new GradeBook( "Geografia", 3 );
 
+   gradebookPtr->setNumAlunos( novosAlunos );
+
+   /*
    //Lista de alunos
    const int NUMALUNOS = 4;
    const string alunos[ NUMALUNOS ] = { "Catarina", "Sophia", "Noemi", "Goo"};
@@ -27,31 +27,18 @@ int main()
    
    //Cadastrando alunos
    gradebookPtr->cadastrarAlunoGradeBook( alunos[ 0 ] );
-   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );
-      //Cadastrando alunos em gradebook1 usando gradebookPtr
+   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );      
    gradebookPtr->cadastrarAlunoGradeBook( alunos[ 2 ] );
    cout << "Imprimindo lista de alunos de gradebook1 usando o ponteiro gradebookPtr.\n";
    gradebookPtr->displayMessage( );
    cout << "Endereco de gradebook1: " << gradebookPtr << endl;
-
-   cout << "Deletando o objeto.\n";
-   delete gradebookPtr;
-   gradebookPtr = 0;
-   cout << "\n\n";
-
-   cout << "Criando outro objeto e colocando o endereco no ponteiro.\n";
-   gradebookPtr = new GradeBook( gradebook1 );
-
-   //Cadastrando dois alunos
-   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 0 ] );
-   gradebookPtr->cadastrarAlunoGradeBook( alunos[ 1 ] );
-   gradebookPtr->displayMessage( );
-
+   
    //SEMPRE desalocar a memória explicitamente
    //Lembrem do homem-aranha
    cout << "Deletando o objeto explicitamente.\n";
    cout << "delete gradebookPtr;\n";
    delete gradebookPtr;
+   */
    
    return 0;
 }
