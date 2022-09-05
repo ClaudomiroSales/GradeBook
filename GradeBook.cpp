@@ -28,11 +28,7 @@ GradeBook::GradeBook( string name, int numAlunos )
 :MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
     setCourseName( name );
-    setNumAlunos( numAlunos );
-    histSize = 1;
-    histPtr = new int[ histSize ];
-    nextEntrieInHist = 0;
-    histPtr[ nextEntrieInHist++ ] = this->numAlunos;
+    setNumAlunos( numAlunos );  
 
     numGradeBooks++;
 }
@@ -40,11 +36,7 @@ GradeBook::GradeBook( string name, int numAlunos )
 GradeBook::GradeBook( int numAlunos )
 :courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
-    setNumAlunos( numAlunos );
-    histSize = 1;
-    histPtr = new int[ histSize ];
-    nextEntrieInHist = 0;
-    histPtr[ nextEntrieInHist++ ] = this->numAlunos;
+    setNumAlunos( numAlunos ); 
 
     numGradeBooks++;
 }
@@ -93,19 +85,20 @@ void GradeBook::setNumAlunos( int numAlunos )
         numAlunos = 0;
         return;
     }
-
     
     if ( numAlunos < NUMALUNOSPORTURMA )
     {
         //Tem mais vagas que o número de alunos que estão sendo requisitados
         this->numAlunos = numAlunos;
         GradeBook::numAlunosEscola += this->numAlunos;
+        cadastrarRegInHist( numAlunos );
         return;
     }
         
     //Número de alunos ultrapassou o número máximo por turma
     this->numAlunos = NUMALUNOSPORTURMA;
     GradeBook::numAlunosEscola += this->numAlunos; 
+    cadastrarRegInHist( numAlunos );
         
 }
 
