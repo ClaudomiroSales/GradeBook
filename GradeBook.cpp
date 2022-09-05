@@ -121,6 +121,8 @@ void GradeBook::displayMessage( bool check ) const
         cout << "Welcome to the Grade Book for course " << courseName << '.'
         << " A Turma tem " << numAlunos << " aluno.\n"; 
         printListaAlunos( );
+        cout << "Imprimindo histórico de alunos.\n";
+        printHist( );
         return;
     }                 
 
@@ -139,6 +141,8 @@ void GradeBook::displayMessage( bool check )
         cout << "Welcome to the Grade Book for course " << courseName << '.'
         << " A Turma tem " << numAlunos << " aluno:\n"; 
         printListaAlunos( );
+        cout << "Imprimindo historico de alunos.\n";
+        printHist( );
         return;
     }         
 
