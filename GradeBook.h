@@ -39,12 +39,15 @@ public:
 
     void cadastrarRegInHist( int );
 
-     void setNumAlunos( int );
+    void setNumAlunos( int );
 
 private:
 
     string courseName;
     int numAlunos;
+    //Número de alunos cadastrados em alunos
+    //Usado em cadastrarAlunoGradeBook
+    //alunos[ numAlunosCadastrados - 1 ] = novoAluno;
     int numAlunosCadastrados;
     const int MAXSIZENAME;
     bool check;
