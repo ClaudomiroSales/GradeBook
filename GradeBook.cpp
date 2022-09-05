@@ -27,6 +27,8 @@ GradeBook::GradeBook( )
 GradeBook::GradeBook( string name, int numAlunos )
 :MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
+    nextEntrieInHist = 0;
+    histSize = 0;
     setCourseName( name );
     setNumAlunos( numAlunos );  
 
@@ -36,6 +38,8 @@ GradeBook::GradeBook( string name, int numAlunos )
 GradeBook::GradeBook( int numAlunos )
 :courseName(""), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {
+    nextEntrieInHist = 0;
+    histSize = 0;
     setNumAlunos( numAlunos ); 
 
     numGradeBooks++;
@@ -184,27 +188,43 @@ void GradeBook::printListaAlunos( ) const
         return;
     }
 
+    if( histSize == 0 )
+    {
+        histSize = 1;
+        histPtr = new int[ histSize ];
+        histPtr[ nextEntrieInHist++ ] = numAlunos;
+        return;
+    }       
+
     alocarHist( numAlunos );    
  }
 
  void GradeBook::printHist( ) const
  {
     for( int i = 0; i < nextEntrieInHist; i++ )
-        cout << histPtr[ i ] << endl;
+        cout << histPtr[ i ] << '\n'; 
+    
  }
 
  void GradeBook::alocarHist( int numAlunos ) 
  {    
+    //cout << "Allocating...\n";
     int *histTemp = new int[ histSize ];
     for( int i = 0; i < nextEntrieInHist; i++ )
         histTemp[ i ] = histPtr[ i ];
 
     delete [] histPtr;
-    histSize =+ ceil( histSize * 0.5 );//Aumenta a memória em 50%
+    histSize += int( ceil( histSize * 0.5 ) );//Aumenta a memória em 50%
+    //cout << "New histSize " << histSize << '\n';
+    //cout << "And nextEntrieInHist " << nextEntrieInHist << '\n';
     int *histPtr = new int[ histSize ];
     for( int i = 0; i < nextEntrieInHist; i++ )
         histPtr[ i ] = histTemp[ i ];
     histPtr[ nextEntrieInHist++ ] = numAlunos;
+    //cout << "histPtr[ nextEntrieInHist ] " << histPtr[ nextEntrieInHist - 1 ] << '\n';
+    //cout << "And nextEntrieInHist " << nextEntrieInHist << '\n';
+    //cout << "numAlunos " << numAlunos << '\n';
 
-    delete [] histTemp;        
+    delete [] histTemp;     
+      
  }
