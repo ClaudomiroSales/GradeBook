@@ -181,9 +181,15 @@ void GradeBook::printListaAlunos( ) const
         cout << alunos[i] << endl;
 }
 
- void GradeBook::cadastrarRegInHist( int newEntries )
+ void GradeBook::cadastrarRegInHist( int numAlunos )
  {
-    
+    if ( nextEntrieInHist < histSize )
+    {
+        histPtr[ nextEntrieInHist++ ] = numAlunos;
+        return;
+    }
+
+    alocarHist( numAlunos );    
  }
 
  void GradeBook::printHist( ) const
@@ -193,22 +199,17 @@ void GradeBook::printListaAlunos( ) const
  }
 
  void GradeBook::alocarHist( int numAlunos ) 
- {
-    if ( nextEntrieInHist == histSize )
-        {
-            int *histTemp = new int[ histSize ];
-            for( int i = 0; i < nextEntrieInHist; i++ )
-                histTemp[ i ] = histPtr[ i ];
+ {    
+    int *histTemp = new int[ histSize ];
+    for( int i = 0; i < nextEntrieInHist; i++ )
+        histTemp[ i ] = histPtr[ i ];
 
-            delete [] histPtr;
-            histSize =+ ceil( histSize * 0.5 );//Aumenta a memória em 50%
-            int *histPtr = new int[ histSize ];
-            for( int i = 0; i < nextEntrieInHist; i++ )
-                histPtr[ i ] = histTemp[ i ];
-            histPtr[ nextEntrieInHist++ ] = numAlunos;
+    delete [] histPtr;
+    histSize =+ ceil( histSize * 0.5 );//Aumenta a memória em 50%
+    int *histPtr = new int[ histSize ];
+    for( int i = 0; i < nextEntrieInHist; i++ )
+        histPtr[ i ] = histTemp[ i ];
+    histPtr[ nextEntrieInHist++ ] = numAlunos;
 
-            delete [] histTemp;
-        }
-
-        printHist( );
+    delete [] histTemp;        
  }
