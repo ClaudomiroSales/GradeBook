@@ -88,22 +88,11 @@ void GradeBook::setNumAlunos( int numAlunos )
     {
         numAlunos = 0;
         return;
-    }
-    
-    //if ( numAlunos < NUMALUNOSPORTURMA )
-    //{
-        //Tem mais vagas que o número de alunos que estão sendo requisitados
-        this->numAlunos = numAlunos;
-        GradeBook::numAlunosEscola += this->numAlunos;
-        cadastrarRegInHist( numAlunos );
-        return;
-    //}
-        
-    //Número de alunos ultrapassou o número máximo por turma
-    //this->numAlunos = NUMALUNOSPORTURMA;
-    GradeBook::numAlunosEscola += this->numAlunos; 
-    cadastrarRegInHist( numAlunos );
-        
+    }    
+   
+    this->numAlunos = numAlunos;
+    GradeBook::numAlunosEscola += this->numAlunos;
+    cadastrarRegInHist( numAlunos );  
 }
 
 string GradeBook::getCourseName( )
