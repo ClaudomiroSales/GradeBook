@@ -149,10 +149,10 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
     //O vector alunos pode crescer dinamicamente
     //Mas só pode aceitar numAlunos
     
-    if( numAlunosCadastrados < numAlunos ) 
+    if( alunos.size( ) < numAlunos ) 
     {
         numAlunosCadastrados++;
-        //alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
+        alunos.push_back( new string(novoAluno) );        
         return;
     }
 
@@ -162,8 +162,8 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
 
 void GradeBook::printListaAlunos( ) const
 {
-    //for( int i = 0; i < numAlunosCadastrados; i++ )
-        //cout << alunos[i] << endl;
+    for( int i = 0; i < alunos.size( ); i++ )
+        cout << alunos[i] << endl;
 }
 
  void GradeBook::cadastrarRegInHist( int numAlunos )
