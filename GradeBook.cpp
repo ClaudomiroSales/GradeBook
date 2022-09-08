@@ -149,10 +149,10 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
     //O vector alunos pode crescer dinamicamente
     //Mas só pode aceitar numAlunos
     
-    if( numAlunosCadastrados < numAlunos ) 
+    if( alunos.size( ) < numAlunos ) 
     {
         numAlunosCadastrados++;
-        //alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
+        alunos.push_back( new string(novoAluno) );        
         return;
     }
 
