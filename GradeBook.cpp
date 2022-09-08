@@ -156,14 +156,14 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
         return;
     }
 
-    cout << "Nao possivel cadastrar novos alunos. Turma cheia.\n";
+    cout << "Nao eh possivel cadastrar " << novoAluno << '.' << " Turma cheia.\n";
 
 }
 
 void GradeBook::printListaAlunos( ) const
 {
     for( int i = 0; i < alunos.size( ); i++ )
-        cout << alunos[i] << endl;
+        cout << alunos[i] << '\t' << *alunos[ i ] << endl;
 }
 
  void GradeBook::cadastrarRegInHist( int numAlunos )
