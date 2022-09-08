@@ -166,7 +166,7 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
     if( numAlunosCadastrados < numAlunos ) 
     {
         numAlunosCadastrados++;
-        alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
+        //alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
         return;
     }
 
