@@ -64,7 +64,7 @@ private:
     static const int NUMERODENOTAS = 4;
     static const string NOTAS[ NUMERODENOTAS ];
 
-    //Cada GradeBook tem o seu número fixo de alunos
+    //O número de alunos pode crescer dinamicamente
     vector< string * > alunos;   
 
     //Alocação dinâmica de memória
