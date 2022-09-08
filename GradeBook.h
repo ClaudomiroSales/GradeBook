@@ -4,6 +4,9 @@
 #include <string>
 using std::string;
 
+#include <vector>
+using std::vector;
+
 class GradeBook
 {
 public:
@@ -62,8 +65,7 @@ private:
     static const string NOTAS[ NUMERODENOTAS ];
 
     //Cada GradeBook tem o seu número fixo de alunos
-    static const int NUMALUNOSPORTURMA = 50;
-    string alunos[ NUMALUNOSPORTURMA ];   
+    vector< string * > alunos;   
 
     //Alocação dinâmica de memória
     //Guarda o histórico da quantidade de alunos

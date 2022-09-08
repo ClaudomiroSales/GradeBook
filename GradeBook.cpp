@@ -90,17 +90,17 @@ void GradeBook::setNumAlunos( int numAlunos )
         return;
     }
     
-    if ( numAlunos < NUMALUNOSPORTURMA )
-    {
+    //if ( numAlunos < NUMALUNOSPORTURMA )
+    //{
         //Tem mais vagas que o número de alunos que estão sendo requisitados
         this->numAlunos = numAlunos;
         GradeBook::numAlunosEscola += this->numAlunos;
         cadastrarRegInHist( numAlunos );
         return;
-    }
+    //}
         
     //Número de alunos ultrapassou o número máximo por turma
-    this->numAlunos = NUMALUNOSPORTURMA;
+    //this->numAlunos = NUMALUNOSPORTURMA;
     GradeBook::numAlunosEscola += this->numAlunos; 
     cadastrarRegInHist( numAlunos );
         
@@ -166,7 +166,7 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
     if( numAlunosCadastrados < numAlunos ) 
     {
         numAlunosCadastrados++;
-        alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
+        //alunos[ numAlunosCadastrados - 1 ] = novoAluno;        
         return;
     }
 
@@ -176,8 +176,8 @@ void GradeBook::cadastrarAlunoGradeBook( const string &novoAluno )
 
 void GradeBook::printListaAlunos( ) const
 {
-    for( int i = 0; i < numAlunosCadastrados; i++ )
-        cout << alunos[i] << endl;
+    //for( int i = 0; i < numAlunosCadastrados; i++ )
+        //cout << alunos[i] << endl;
 }
 
  void GradeBook::cadastrarRegInHist( int numAlunos )
