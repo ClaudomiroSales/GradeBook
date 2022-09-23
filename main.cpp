@@ -2,6 +2,9 @@
 #include "GradeBook.cpp"
 #include "GradeBook.h"
 
+#include <vector>
+using std::vector;
+
 //This is where the execution of program begins
 int main()
 {
@@ -31,7 +34,7 @@ int main()
 
    //Cadastrando os alunos da lista no gradebook de Geografia
    for( int i = 0; i < alunos.size(); i++ )
-      gradebookPtr->cadastrarAlunoGradeBook( *alunos[ i ] );
+      //gradebookPtr->cadastrarAlunoGradeBook( *alunos[ i ] );
    
    gradebookPtr->displayMessage( );
 
