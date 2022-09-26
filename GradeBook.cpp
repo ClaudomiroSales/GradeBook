@@ -70,6 +70,9 @@ GradeBook::GradeBook( const GradeBook& other )
 GradeBook::~GradeBook( )
 {
     delete [] histPtr; 
+
+    for( auto i = 0; i < alunos.size( ); i++ )
+        delete this->alunos[ i ];  
 }
 
 /* GradeBook::GradeBook( const GradeBook& other )
