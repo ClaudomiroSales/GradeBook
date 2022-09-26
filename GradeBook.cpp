@@ -143,7 +143,7 @@ void GradeBook::displayMessage( bool check )
     if( courseName.size( ) > 0 )
     {
         cout << "Welcome to the Grade Book for course " << courseName << '.'
-        << " A Turma tem " << numAlunos << " aluno:\n"; 
+        << " A Turma tem " << numAlunos << " alunos:\n"; 
         printListaAlunos( );
         cout << "Imprimindo historico de alunos.\n";
         printHist( );

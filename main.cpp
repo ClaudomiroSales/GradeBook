@@ -38,8 +38,16 @@ int main()
    
    gradebookPtr->displayMessage( );
 
+   GradeBook *gradebookPtr_extra = new GradeBook( *gradebookPtr );
+   cout << "\n\nImprimindo informacoes de gradebookPtr_extra.\n";
+   gradebookPtr_extra->displayMessage( );
+
+   //Desalocando memória
    for( int i = 0; i < alunos.size(); i++ )
       delete alunos[ i ];
+
+   delete gradebookPtr;
+   delete gradebookPtr_extra;
 
    return 0;
 }
