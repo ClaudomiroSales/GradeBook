@@ -60,6 +60,10 @@ GradeBook::GradeBook( const GradeBook& other )
     for( int i = 0; i < nextEntrieInHist; i++ )
         this->histPtr[ i ] = histPtr[ i ];
 
+    this->alunos.resize( other.alunos.size() );
+    for( auto i = 0; i < other.alunos.size( ); i++ )
+        this->alunos[ i ] = other.alunos[ i ];    
+
     numGradeBooks++;
 }
 
