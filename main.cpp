@@ -38,5 +38,8 @@ int main()
    
    gradebookPtr->displayMessage( );
 
+   for( int i = 0; i < alunos.size(); i++ )
+      delete alunos[ i ];
+
    return 0;
 }
