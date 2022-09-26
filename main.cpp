@@ -34,7 +34,7 @@ int main()
 
    //Cadastrando os alunos da lista no gradebook de Geografia
    for( int i = 0; i < alunos.size(); i++ )
-      //gradebookPtr->cadastrarAlunoGradeBook( *alunos[ i ] );
+      gradebookPtr->cadastrarAlunoGradeBook( *alunos[ i ] );
    
    gradebookPtr->displayMessage( );
 

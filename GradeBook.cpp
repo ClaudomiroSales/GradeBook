@@ -20,6 +20,7 @@ int GradeBook::getNumAlunosEscola( )
 GradeBook::GradeBook( )
 :histPtr(0), courseName(""), numAlunos( 0 ), MAXSIZENAME( 9 ), check( false ), numAlunosCadastrados( 0 )
 {  
+      histSize = 0;
       numGradeBooks++;  
 
 }
@@ -29,6 +30,7 @@ GradeBook::GradeBook( string name, int numAlunos )
 {
     nextEntrieInHist = 0;
     histSize = 0;
+    histPtr = 0;
     setCourseName( name );
     setNumAlunos( numAlunos );  
 
@@ -40,6 +42,7 @@ GradeBook::GradeBook( int numAlunos )
 {
     nextEntrieInHist = 0;
     histSize = 0;
+    histPtr = 0;
     setNumAlunos( numAlunos ); 
 
     numGradeBooks++;
