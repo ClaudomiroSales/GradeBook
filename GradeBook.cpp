@@ -54,6 +54,12 @@ GradeBook::GradeBook( const GradeBook& other )
     this->courseName = other.courseName;
     setNumAlunos( other.numAlunos );
 
+    this->histSize = other.histSize;
+    this->nextEntrieInHist = other.nextEntrieInHist;
+    this->histPtr = new int[ this->histSize ];
+    for( int i = 0; i < nextEntrieInHist; i++ )
+        this->histPtr[ i ] = histPtr[ i ];
+
     numGradeBooks++;
 }
 
