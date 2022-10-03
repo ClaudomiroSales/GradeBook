@@ -36,6 +36,7 @@ int main()
    for( int i = 0; i < alunos.size(); i++ )
       gradebookPtr->cadastrarAlunoGradeBook( *alunos[ i ] );
    
+   cout << "\n\nUsando displayMessage com uma lista de alunos.\n";
    gradebookPtr->displayMessage( );
 
    GradeBook *gradebookPtr_extra = new GradeBook( *gradebookPtr );
@@ -44,7 +45,10 @@ int main()
 
    //Desalocando memória
    for( int i = 0; i < alunos.size(); i++ )
+   {
       delete alunos[ i ];
+      alunos.pop_back( );
+   }
 
    delete gradebookPtr;
    delete gradebookPtr_extra;

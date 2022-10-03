@@ -58,7 +58,7 @@ GradeBook::GradeBook( const GradeBook& other )
     this->nextEntrieInHist = other.nextEntrieInHist;
     this->histPtr = new int[ this->histSize ];
     for( int i = 0; i < nextEntrieInHist; i++ )
-        this->histPtr[ i ] = histPtr[ i ];
+        this->histPtr[ i ] = other.histPtr[ i ];
 
     this->alunos.resize( other.alunos.size() );
     for( auto i = 0; i < other.alunos.size( ); i++ )
@@ -219,7 +219,7 @@ void GradeBook::printListaAlunos( ) const
     histSize += int( ceil( histSize * 0.5 ) );//Aumenta a memória em 50%
     //cout << "New histSize " << histSize << '\n';
     //cout << "And nextEntrieInHist " << nextEntrieInHist << '\n';
-    int *histPtr = new int[ histSize ];
+    histPtr = new int[ histSize ];
     for( int i = 0; i < nextEntrieInHist; i++ )
         histPtr[ i ] = histTemp[ i ];
     histPtr[ nextEntrieInHist++ ] = numAlunos;
